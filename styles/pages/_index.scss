@@ -1,0 +1,89 @@
+main {
+  .intro {
+    position: relative;
+    height: calc(100vh - 64px);
+    .intro-copy {
+      position: absolute;
+      left: 20px;
+      bottom: 15%;
+      display: flex;
+      align-items: flex-end;
+      .text-area {
+        width: 60%;
+        margin-right: 20px;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: -0.4rem;
+        p {
+          span {
+            // color: rgba($color: #000000, $alpha: 0.75);
+            opacity: 0;
+          }
+        }
+      }
+      .button-wrap {
+        width: 36px;
+        height: 36px;
+        opacity: 0;
+        transform: translateY(-20px);
+        .button {
+          position: relative;
+          width: 36px;
+          height: 36px;
+          &::before,
+          &::after {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            content: "";
+            display: block;
+            width: 100%;
+            height: 12px;
+            background-color: $red;
+          }
+          &::after {
+            transform: translateY(-50%) rotate(90deg);
+          }
+        }
+      }
+    }
+    .bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 28px;
+      background-color: $red;
+      transform: scaleX(0);
+    }
+  }
+}
+
+@keyframes plus-rotate {
+  50% {
+    transform: rotate(225deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes plusicon-down {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scaleX(1);
+  }
+}
