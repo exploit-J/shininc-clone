@@ -176,6 +176,7 @@ header {
 
 main .intro {
   position: relative;
+  width: 100%;
   height: calc(100vh - 64px); }
   main .intro .intro-copy {
     position: absolute;
@@ -183,6 +184,12 @@ main .intro {
     bottom: 15%;
     display: flex;
     align-items: flex-end; }
+    @media screen and (min-width: 1025px) {
+      main .intro .intro-copy {
+        width: fit-content;
+        max-width: 1024px;
+        left: 50%;
+        transform: translateX(-50%); } }
     main .intro .intro-copy .text-area {
       width: 60%;
       margin-right: 20px;
@@ -190,17 +197,41 @@ main .intro {
       font-weight: 700;
       line-height: 0.9;
       letter-spacing: -0.4rem; }
+      @media screen and (min-width: 1025px) {
+        main .intro .intro-copy .text-area {
+          width: fit-content;
+          font-size: 8rem;
+          line-height: 0.8;
+          letter-spacing: -1rem; } }
       main .intro .intro-copy .text-area p span {
         opacity: 0; }
     main .intro .intro-copy .button-wrap {
+      position: relative;
       width: 36px;
       height: 36px;
       opacity: 0;
       transform: translateY(-20px); }
+      @media screen and (min-width: 1025px) {
+        main .intro .intro-copy .button-wrap {
+          position: absolute;
+          left: 64%;
+          width: 65px;
+          height: 65px; } }
+      main .intro .intro-copy .button-wrap:hover .button {
+        opacity: 0;
+        transform: translateY(-20px); }
+      main .intro .intro-copy .button-wrap:hover .arrow {
+        opacity: 1;
+        transform: translateY(30px); }
       main .intro .intro-copy .button-wrap .button {
         position: relative;
         width: 36px;
-        height: 36px; }
+        height: 36px;
+        transition: 0.3s; }
+        @media screen and (min-width: 1025px) {
+          main .intro .intro-copy .button-wrap .button {
+            width: 65px;
+            height: 65px; } }
         main .intro .intro-copy .button-wrap .button::before, main .intro .intro-copy .button-wrap .button::after {
           position: absolute;
           top: 50%;
@@ -210,8 +241,24 @@ main .intro {
           width: 100%;
           height: 12px;
           background-color: #d70c19; }
+          @media screen and (min-width: 1025px) {
+            main .intro .intro-copy .button-wrap .button::before, main .intro .intro-copy .button-wrap .button::after {
+              height: 18px; } }
         main .intro .intro-copy .button-wrap .button::after {
           transform: translateY(-50%) rotate(90deg); }
+      main .intro .intro-copy .button-wrap .arrow {
+        position: absolute;
+        bottom: 70%;
+        opacity: 0;
+        transition: 0.5s;
+        cursor: pointer; }
+        main .intro .intro-copy .button-wrap .arrow img {
+          width: 36px;
+          height: 36px; }
+          @media screen and (min-width: 1025px) {
+            main .intro .intro-copy .button-wrap .arrow img {
+              width: 65px;
+              height: 65px; } }
   main .intro .bar {
     position: absolute;
     left: 0;

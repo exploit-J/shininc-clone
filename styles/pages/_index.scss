@@ -1,13 +1,22 @@
 main {
   .intro {
     position: relative;
+    width: 100%;
     height: calc(100vh - 64px);
+    @include responsive {
+    }
     .intro-copy {
       position: absolute;
       left: 20px;
       bottom: 15%;
       display: flex;
       align-items: flex-end;
+      @include responsive {
+        width: fit-content;
+        max-width: 1024px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
       .text-area {
         width: 60%;
         margin-right: 20px;
@@ -15,22 +24,47 @@ main {
         font-weight: 700;
         line-height: 0.9;
         letter-spacing: -0.4rem;
+        @include responsive {
+          width: fit-content;
+          font-size: 8rem;
+          line-height: 0.8;
+          letter-spacing: -1rem;
+        }
         p {
           span {
-            // color: rgba($color: #000000, $alpha: 0.75);
             opacity: 0;
           }
         }
       }
       .button-wrap {
+        position: relative;
         width: 36px;
         height: 36px;
         opacity: 0;
         transform: translateY(-20px);
+        @include responsive {
+          position: absolute;
+          left: 64%;
+          width: 65px;
+          height: 65px;
+        }
+        &:hover .button {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        &:hover .arrow {
+          opacity: 1;
+          transform: translateY(30px);
+        }
         .button {
           position: relative;
           width: 36px;
           height: 36px;
+          transition: 0.3s;
+          @include responsive {
+            width: 65px;
+            height: 65px;
+          }
           &::before,
           &::after {
             position: absolute;
@@ -41,9 +75,27 @@ main {
             width: 100%;
             height: 12px;
             background-color: $red;
+            @include responsive {
+              height: 18px;
+            }
           }
           &::after {
             transform: translateY(-50%) rotate(90deg);
+          }
+        }
+        .arrow {
+          position: absolute;
+          bottom: 70%;
+          opacity: 0;
+          transition: 0.5s;
+          cursor: pointer;
+          img {
+            width: 36px;
+            height: 36px;
+            @include responsive {
+              width: 65px;
+              height: 65px;
+            }
           }
         }
       }
