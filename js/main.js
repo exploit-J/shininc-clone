@@ -57,11 +57,14 @@ const navPc1stDepthList = document.querySelectorAll(
 
 navPc1stDepthList.forEach((item) => {
   const main = document.querySelector("main");
+  console.log(item);
   item.addEventListener("click", (e) => {
-    navPc1stDepthList.forEach((item2) =>
-      item2.nextElementSibling.classList.remove("active")
-    );
+    navPc1stDepthList.forEach((item2) => {
+      item2.nextElementSibling.classList.remove("active");
+      item2.classList.remove("active");
+    });
     e.target.nextElementSibling.classList.add("active");
+    e.target.classList.add("active");
   });
 
   main.addEventListener("click", () => {

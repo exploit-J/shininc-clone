@@ -221,9 +221,23 @@ header {
           header .inner-header .nav-pc .nav_1depth > li {
             margin-right: 3rem; }
             header .inner-header .nav-pc .nav_1depth > li > span {
-              font-size: 1.5rem;
+              position: relative;
+              font-size: 1.2rem;
               font-weight: 700;
               cursor: pointer; }
+              header .inner-header .nav-pc .nav_1depth > li > span:hover {
+                opacity: 0.5; }
+              header .inner-header .nav-pc .nav_1depth > li > span.active::after {
+                transform: scaleX(1); }
+              header .inner-header .nav-pc .nav_1depth > li > span::after {
+                position: absolute;
+                left: 0;
+                top: 44px;
+                content: "";
+                display: block;
+                border-bottom: 3px solid #d70c19;
+                width: 100%;
+                transform: scaleX(0); }
             header .inner-header .nav-pc .nav_1depth > li .inner-depth {
               position: absolute;
               left: 0;
@@ -250,14 +264,16 @@ header {
                   margin-bottom: 20px; }
                   header .inner-header .nav-pc .nav_1depth > li .inner-depth .nav_2depth > li > span {
                     margin-bottom: 10px;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     font-weight: 700;
                     opacity: 0.8;
                     cursor: pointer; }
                   header .inner-header .nav-pc .nav_1depth > li .inner-depth .nav_2depth > li .nav_3depth > li {
-                    font-size: 1rem;
+                    font-size: 0.85rem;
                     opacity: 0.5;
-                    cursor: pointer; } }
+                    cursor: pointer; }
+                    header .inner-header .nav-pc .nav_1depth > li .inner-depth .nav_2depth > li .nav_3depth > li:hover {
+                      color: #d70c19; } }
 
 main .intro {
   position: relative;
