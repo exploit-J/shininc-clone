@@ -30,16 +30,24 @@ navClose.addEventListener("click", () => {
   navMenu.classList.remove("active");
 });
 
+function navItemOpen() {
+  if (window.innerWidth < 1025) {
+    this.parentNode.classList.toggle("active");
+  }
+}
 nav1depthList.forEach((item) => {
-  console.log("item", item);
-  item.addEventListener("click", () => {
-    item.parentNode.classList.toggle("active");
-  });
+  item.addEventListener("click", navItemOpen);
 });
 
 nav2depthList.forEach((item) => {
-  console.log("item", item);
-  item.addEventListener("click", () => {
-    item.parentNode.classList.toggle("active");
-  });
+  item.addEventListener("click", navItemOpen);
 });
+
+function closeNav() {
+  if (window.innerWidth > 1024) {
+    nav1depthList.forEach((item) => {
+      item.parentNode.classList.remove("active");
+    });
+  }
+}
+window.addEventListener("resize", closeNav);
