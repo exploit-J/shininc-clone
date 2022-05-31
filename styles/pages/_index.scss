@@ -2,7 +2,7 @@ main {
   .intro {
     position: relative;
     width: 100%;
-    height: calc(100vh - 64px);
+    height: 100vh;
     @include responsive {
     }
     .intro-copy {
@@ -108,6 +108,17 @@ main {
       height: 28px;
       background-color: $red;
       transform: scaleX(0);
+    }
+  }
+  .news {
+    ul {
+      li {
+        a {
+          img {
+            width: 150px;
+          }
+        }
+      }
     }
   }
 }

@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@include responsive {
+  .mo-only {
+    display: none !important;
+  }
+}

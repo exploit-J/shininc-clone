@@ -5,9 +5,8 @@ const introBar = document.querySelector(".intro .bar");
 const navOpen = document.querySelector(".nav-icon");
 const navMenu = document.querySelector("nav");
 const navClose = document.querySelector(".close-button");
-const nav1depthList = document.querySelectorAll(".nav_1depth>li>button");
-const nav2depthList = document.querySelectorAll(".nav_2depth>li>button");
-console.log("nav1depthList", nav1depthList);
+const navMo1stDepthList = document.querySelectorAll(".nav_1depth>li>button");
+const navMo2ndDepthList = document.querySelectorAll(".nav_2depth>li>button");
 
 window.onload = () => {
   let timer = 100;
@@ -35,19 +34,39 @@ function navItemOpen() {
     this.parentNode.classList.toggle("active");
   }
 }
-nav1depthList.forEach((item) => {
+navMo1stDepthList.forEach((item) => {
   item.addEventListener("click", navItemOpen);
 });
 
-nav2depthList.forEach((item) => {
+navMo2ndDepthList.forEach((item) => {
   item.addEventListener("click", navItemOpen);
 });
 
 function closeNav() {
   if (window.innerWidth > 1024) {
-    nav1depthList.forEach((item) => {
+    navMo1stDepthList.forEach((item) => {
       item.parentNode.classList.remove("active");
     });
   }
 }
 window.addEventListener("resize", closeNav);
+
+const navPc1stDepthList = document.querySelectorAll(
+  ".nav-pc .nav_1depth>li>span"
+);
+
+navPc1stDepthList.forEach((item) => {
+  const main = document.querySelector("main");
+  item.addEventListener("click", (e) => {
+    navPc1stDepthList.forEach((item2) =>
+      item2.nextElementSibling.classList.remove("active")
+    );
+    e.target.nextElementSibling.classList.add("active");
+  });
+
+  main.addEventListener("click", () => {
+    navPc1stDepthList.forEach((item2) =>
+      item2.nextElementSibling.classList.remove("active")
+    );
+  });
+});

@@ -1,158 +1,262 @@
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 4rem;
-  padding: 0 20px;
   border-bottom: 1px solid $border;
-  //   z-index: $header-level;
-  .logo {
-    width: 11rem;
-    a {
-      display: block;
-      img {
+  background-color: #fff;
+  z-index: $header-level;
+  .inner-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    padding: 0 20px;
+    @include responsive {
+      max-width: 1920px;
+    }
+    .logo {
+      width: 11rem;
+      a {
         display: block;
-        width: 100%;
+        img {
+          display: block;
+          width: 100%;
+        }
       }
     }
-  }
-  & > button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    img {
-      width: 2rem;
-      padding: 0 4px;
-    }
-  }
-  .nav-icon {
-    right: 1.5rem;
-  }
-  .search-icon {
-    margin-right: 4px;
-    right: 3.5rem;
-  }
+    & > button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
 
-  nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-    height: 100vh;
-    padding-top: 2rem;
-    background-color: #fff;
-    transform: translateX(100%);
-    transition: 0.5s;
-    overflow-y: auto;
-    z-index: $nav-level;
-    &.active {
-      transform: translateX(0);
+      img {
+        width: 2rem;
+        padding: 0 4px;
+      }
     }
-    .side-bar-top {
-      position: sticky;
+    .nav-icon {
+      right: 1.5rem;
+      @include responsive {
+        display: none;
+      }
+    }
+    .contact-us {
+      display: none;
+      @include responsive {
+        display: block;
+        right: 10rem;
+        font-size: 1.1rem;
+        a {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: 700;
+        }
+      }
+    }
+    .search-icon {
+      margin-right: 4px;
+      right: 3.5rem;
+      @include responsive {
+        right: 5.5rem;
+      }
+    }
+
+    .nav-mo {
+      position: absolute;
       top: 0;
       left: 0;
-
       display: flex;
-      align-items: center;
-      justify-content: end;
-      padding: 0 20px;
-      .contact-us {
-        margin-right: 20px;
-        padding: 0 4px;
-        color: white;
-        background-color: $black-bg;
-        border-radius: 8px;
-      }
-      .close-button {
-        font-size: 1.3rem;
-      }
-    }
-    .nav_1depth {
+      flex-direction: column;
+      align-items: flex-end;
       width: 100%;
-      max-width: 700px;
       height: 100vh;
       padding-top: 2rem;
+      background-color: #fff;
+      transform: translateX(100%);
+      transition: 0.5s;
+      overflow-y: auto;
+      z-index: $nav-level;
 
-      & > li {
-        width: 100%;
+      &.active {
+        transform: translateX(0);
+      }
+      .side-bar-top {
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
         padding: 0 20px;
-        margin-bottom: 1rem;
-
-        &.active > button > i {
-          color: $red;
-          transform: rotate(-180deg);
+        .contact-us {
+          margin-right: 20px;
+          padding: 0 4px;
+          color: white;
+          background-color: $black-bg;
+          border-radius: 8px;
         }
-        &.active .nav_2depth {
-          height: fit-content;
-        }
-
-        & > button {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          margin-bottom: 0.5rem;
-          span {
-            margin-right: 8px;
-            font-size: 2rem;
-          }
-          i {
-            font-size: 1rem;
-            transition: 0.5s;
-          }
+        .close-button {
+          font-size: 1.3rem;
         }
       }
-      .nav_2depth {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
+      .nav_1depth {
         width: 100%;
-        height: 0;
-        overflow: hidden;
-        transition: 0.5s;
+        max-width: 700px;
+        height: 100vh;
+        padding-top: 2rem;
+
         & > li {
-          width: 80%;
-          margin-right: 8px;
-          margin-bottom: 12px;
-          border-bottom: 1px solid $border;
-          font-size: 1.3rem;
+          width: 100%;
+          padding: 0 20px;
+          margin-bottom: 1rem;
+
           &.active > button > i {
-            transform: rotate(45deg);
+            color: $red;
+            transform: rotate(-180deg);
           }
-          button {
+          &.active .nav_2depth {
+            height: fit-content;
+          }
+
+          & > button {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 4px;
+            margin-bottom: 0.5rem;
+            span {
+              margin-right: 8px;
+              font-size: 2rem;
+            }
             i {
+              font-size: 1rem;
               transition: 0.5s;
             }
           }
-          * {
-            font-size: 1.3rem;
-          }
-          &.active .nav_3depth {
-            height: fit-content;
-          }
         }
-        .nav_3depth {
+        .nav_2depth {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          justify-content: center;
+          align-items: flex-end;
           width: 100%;
           height: 0;
-          background-color: $gray-bg;
           overflow: hidden;
-          li {
-            padding: 8px 0 8px 20px;
-            font-size: 1.1rem;
+          transition: 0.5s;
+          & > li {
+            width: 80%;
+            margin-right: 8px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid $border;
+            font-size: 1.3rem;
+            &.active > button > i {
+              transform: rotate(45deg);
+            }
+            button {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+              margin-bottom: 4px;
+              i {
+                transition: 0.5s;
+              }
+            }
+            * {
+              font-size: 1.3rem;
+            }
+            &.active .nav_3depth {
+              height: fit-content;
+            }
+          }
+          .nav_3depth {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            height: 0;
+            background-color: $gray-bg;
+            overflow: hidden;
+            li {
+              padding: 8px 0 8px 20px;
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-pc {
+      display: none;
+    }
+    @include responsive {
+      .nav-pc {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        padding-left: 20%;
+        z-index: $nav-level;
+        span {
+          display: block;
+        }
+        .nav_1depth {
+          display: flex;
+          & > li {
+            margin-right: 3rem;
+
+            & > span {
+              font-size: 1.5rem;
+              font-weight: 700;
+              cursor: pointer;
+            }
+            .inner-depth {
+              position: absolute;
+              left: 0;
+              top: 66px;
+              display: none;
+              width: 100%;
+              justify-content: center;
+              height: 30vh;
+              &.active {
+                display: flex;
+              }
+              .nav_2depth {
+                box-sizing: border-box;
+                width: 100%;
+                left: 0;
+                top: 90px;
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 5%;
+                margin-top: 30px;
+                max-width: 1000px;
+                height: fit-content;
+
+                & > li {
+                  width: 180px;
+                  margin-bottom: 20px;
+                  & > span {
+                    margin-bottom: 10px;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    opacity: 0.8;
+                    cursor: pointer;
+                  }
+                  .nav_3depth {
+                    & > li {
+                      // margin-bottom: 10px;
+                      font-size: 1rem;
+                      opacity: 0.5;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
