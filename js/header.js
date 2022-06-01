@@ -48,7 +48,6 @@ const navPc1stDepthList = document.querySelectorAll(
 );
 navPc1stDepthList.forEach((item) => {
   const main = document.querySelector("main");
-  console.log(item);
   item.addEventListener("click", (e) => {
     navPc1stDepthList.forEach((item2) => {
       item2.nextElementSibling.classList.remove("active");
@@ -68,14 +67,23 @@ navPc1stDepthList.forEach((item) => {
 // nav scroll toggle
 const header = document.querySelector("header");
 window.addEventListener("wheel", (e) => {
-  console.log(e.deltaY, e.deltaX);
   if (e.deltaY > 1) {
     header.classList.add("active");
     navPc1stDepthList.forEach((item) => {
       item.nextElementSibling.classList.remove("active");
       item.classList.remove("active");
+      searchModal.classList.remove("active");
     });
   } else {
     header.classList.remove("active");
   }
 });
+
+// search-icon toggle
+const searchIcon = document.querySelector("header .search-icon");
+const searchModal = document.querySelector(".input-area");
+
+function searchModalToggle() {
+  searchModal.classList.toggle("active");
+}
+searchIcon.addEventListener("click", searchModalToggle);

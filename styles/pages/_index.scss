@@ -123,6 +123,11 @@ main {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 2.5rem;
+      transform: translateX(-100%);
+      transition: 0.5s;
+      &.active {
+        transform: translateX(0);
+      }
     }
     .dot {
       color: $red;
@@ -139,6 +144,7 @@ main {
   }
   .about {
     background-color: #fff;
+
     p {
       color: rgba(black, 0.5);
       &.active {
@@ -151,10 +157,21 @@ main {
         color: $red;
       }
     }
+    h2,
+    p {
+      opacity: 0;
+      transform: translateY(20%);
+      transition: 0.5s;
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
   .business {
     width: 100%;
     background-color: $gray-bg;
+
     ul {
       width: 90%;
       margin-left: 10%;
@@ -164,6 +181,13 @@ main {
         height: 4rem;
         border-bottom: 1px solid $border;
         font-size: 1.4rem;
+        transform: translateY(40%);
+        opacity: 0;
+        transition: 0.5s;
+        &.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
         .num {
           margin-right: 16px;
           font-size: 1rem;
@@ -178,6 +202,13 @@ main {
       li {
         padding: 30px 0;
         border-bottom: 1px solid $border;
+        transform: translateY(40%);
+        opacity: 0;
+        transition: 0.5s;
+        &.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
         &:last-child {
           border-bottom: none;
         }
@@ -193,6 +224,22 @@ main {
     background-color: #fff;
     p {
       margin-left: 10%;
+      opacity: 0;
+      transform: translateY(20%);
+      transition: 0.5s;
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  .more {
+    transform: translateY(40%);
+    opacity: 0;
+    transition: 0.5s;
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
