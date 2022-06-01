@@ -441,7 +441,89 @@ main .contact {
     margin-left: 10%; }
 
 footer {
-  background-color: #454545; }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #454545;
+  padding: 50px 20px; }
+  @media screen and (min-width: 1025px) {
+    footer .inner-footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1920px;
+      padding: 30px 100px; } }
+  footer .inner-footer * {
+    color: #e9e9e9; }
+  footer .inner-footer .go-top {
+    position: absolute;
+    right: 5%;
+    top: -2.5rem;
+    transition: 0.5s; }
+    footer .inner-footer .go-top img {
+      width: 45px; }
+    @media screen and (min-width: 1025px) {
+      footer .inner-footer .go-top {
+        top: -4rem; }
+        footer .inner-footer .go-top img {
+          width: 90px; }
+        footer .inner-footer .go-top:hover {
+          top: -6rem; } }
+  footer .inner-footer .info-left {
+    margin-bottom: 12px; }
+    footer .inner-footer .info-left p {
+      margin-bottom: 10px;
+      font-size: 1.7rem; }
+      @media screen and (min-width: 1025px) {
+        footer .inner-footer .info-left p {
+          font-size: 3rem;
+          font-weight: 700; } }
+    footer .inner-footer .info-left address {
+      margin-bottom: 8px;
+      color: rgba(233, 233, 233, 0.7); }
+    footer .inner-footer .info-left dl {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 8px; }
+      footer .inner-footer .info-left dl dt {
+        margin-right: 4px; }
+      footer .inner-footer .info-left dl dd {
+        margin-right: 8px; }
+    footer .inner-footer .info-left dl > * {
+      color: rgba(233, 233, 233, 0.7); }
+    footer .inner-footer .info-left .thx {
+      font-size: 1.3rem;
+      font-weight: 700; }
+  footer .inner-footer .info-right {
+    width: 15%; }
+    footer .inner-footer .info-right .family {
+      margin-bottom: 10px; }
+      footer .inner-footer .info-right .family:hover ul {
+        max-height: 220px; }
+      footer .inner-footer .info-right .family button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 4px; }
+        @media screen and (min-width: 1025px) {
+          footer .inner-footer .info-right .family button {
+            font-size: 1.5rem; } }
+      footer .inner-footer .info-right .family ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s; }
+        footer .inner-footer .info-right .family ul li {
+          margin-bottom: 2px;
+          text-align: right;
+          cursor: pointer; }
+          footer .inner-footer .info-right .family ul li:hover {
+            opacity: 0.5; }
+    footer .inner-footer .info-right .sns i {
+      margin-right: 10px;
+      font-size: 1.7rem; }
+      footer .inner-footer .info-right .sns i:hover {
+        opacity: 0.5; }
 
 @keyframes plus-rotate {
   50% {

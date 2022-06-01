@@ -198,7 +198,117 @@ main {
 }
 
 footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
   background-color: $black-bg;
+  padding: 50px 20px;
+  .inner-footer {
+    @include responsive {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1920px;
+      padding: 30px 100px;
+    }
+    * {
+      color: $border;
+    }
+    .go-top {
+      position: absolute;
+      right: 5%;
+      top: -2.5rem;
+      transition: 0.5s;
+      img {
+        width: 45px;
+      }
+      @include responsive {
+        top: -4rem;
+        img {
+          width: 90px;
+        }
+        &:hover {
+          top: -6rem;
+        }
+      }
+    }
+    .info-left {
+      margin-bottom: 12px;
+      p {
+        margin-bottom: 10px;
+        font-size: 1.7rem;
+        @include responsive {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+      }
+      address {
+        margin-bottom: 8px;
+        color: rgba($border, 0.7);
+      }
+      dl {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        dt {
+          margin-right: 4px;
+        }
+        dd {
+          margin-right: 8px;
+        }
+      }
+      dl > * {
+        color: rgba($border, 0.7);
+      }
+      .thx {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+    }
+    .info-right {
+      width: 15%;
+      .family {
+        margin-bottom: 10px;
+
+        &:hover ul {
+          max-height: 220px;
+        }
+        button {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 4px;
+          @include responsive {
+            font-size: 1.5rem;
+          }
+        }
+        ul {
+          max-height: 0;
+          overflow: hidden;
+          transition: 0.5s;
+
+          li {
+            margin-bottom: 2px;
+            text-align: right;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      .sns {
+        i {
+          margin-right: 10px;
+          font-size: 1.7rem;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes plus-rotate {
