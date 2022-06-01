@@ -12,8 +12,8 @@ main {
       display: flex;
       align-items: flex-end;
       @include responsive {
-        width: fit-content;
-        max-width: 1024px;
+        width: 100%;
+        max-width: 1000px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -114,17 +114,91 @@ main {
       }
     }
   }
-  .news {
+  section {
+    width: 100%;
+    max-width: 1000px;
+    padding: 70px 20px;
+    margin: 0 auto;
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+    }
+    .dot {
+      color: $red;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .more {
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+  .about {
+    background-color: #fff;
+    p {
+      color: rgba(black, 0.5);
+      &.active {
+        color: black;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      strong {
+        color: $red;
+      }
+    }
+  }
+  .business {
+    width: 100%;
+    background-color: $gray-bg;
     ul {
+      width: 90%;
+      margin-left: 10%;
       li {
+        display: flex;
+        align-items: center;
+        height: 4rem;
+        border-bottom: 1px solid $border;
+        font-size: 1.4rem;
+        .num {
+          margin-right: 16px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .news {
+    background-color: #fff;
+    ul {
+      width: 100%;
+      li {
+        padding: 30px 0;
+        border-bottom: 1px solid $border;
+        &:last-child {
+          border-bottom: none;
+        }
         a {
           img {
-            width: 150px;
+            width: 100%;
           }
         }
       }
     }
   }
+  .contact {
+    background-color: #fff;
+    p {
+      margin-left: 10%;
+    }
+  }
+}
+
+footer {
+  background-color: $black-bg;
 }
 
 @keyframes plus-rotate {
@@ -146,11 +220,5 @@ main {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes scale {
-  to {
-    transform: scaleX(1);
   }
 }

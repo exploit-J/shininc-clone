@@ -10,15 +10,12 @@ window.onload = () => {
   });
   setTimeout(() => {
     buttonWrap.style.animation = "plusicon-down 0.5s forwards";
-    // introBar.style.animation = "scale 0.5s forwards";
     introBar.classList.add("active");
   }, 2200);
   setTimeout(() => {
     introPlusIcon.style.animation = "plus-rotate 3s infinite";
   }, 2800);
 };
-
-// if(window.scrolly > 100vh){}
 
 window.addEventListener("scroll", (e) => {
   console.log("y", window.scrollY);
