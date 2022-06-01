@@ -8,6 +8,11 @@ header {
   border-bottom: 1px solid $border;
   background-color: #fff;
   z-index: $header-level;
+  transition: 0.5s;
+  transform: translateY(0);
+  &.active {
+    transform: translateY(-70px);
+  }
   .inner-header {
     display: flex;
     align-items: center;
@@ -233,11 +238,12 @@ header {
             .inner-depth {
               position: absolute;
               left: 0;
-              top: 66px;
+              top: 65px;
               display: none;
               width: 100%;
               justify-content: center;
               height: 30vh;
+              background-color: #fff;
               &.active {
                 display: flex;
               }

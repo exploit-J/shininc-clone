@@ -60,7 +60,11 @@ header {
   width: 100%;
   border-bottom: 1px solid #e9e9e9;
   background-color: #fff;
-  z-index: 30; }
+  z-index: 30;
+  transition: 0.5s;
+  transform: translateY(0); }
+  header.active {
+    transform: translateY(-70px); }
   header .inner-header {
     display: flex;
     align-items: center;
@@ -241,11 +245,12 @@ header {
             header .inner-header .nav-pc .nav_1depth > li .inner-depth {
               position: absolute;
               left: 0;
-              top: 66px;
+              top: 65px;
               display: none;
               width: 100%;
               justify-content: center;
-              height: 30vh; }
+              height: 30vh;
+              background-color: #fff; }
               header .inner-header .nav-pc .nav_1depth > li .inner-depth.active {
                 display: flex; }
               header .inner-header .nav-pc .nav_1depth > li .inner-depth .nav_2depth {
@@ -367,7 +372,10 @@ main .intro {
     width: 100%;
     height: 28px;
     background-color: #d70c19;
+    transition: 0.5s;
     transform: scaleX(0); }
+    main .intro .bar.active {
+      transform: scaleX(1); }
 
 main .news ul li a img {
   width: 150px; }
