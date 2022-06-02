@@ -2,6 +2,8 @@ const introCopy = document.querySelectorAll(".text-area span");
 const buttonWrap = document.querySelector(".button-wrap");
 const introPlusIcon = document.querySelector(".intro-copy .button");
 const introBar = document.querySelector(".intro .bar");
+const familyArea = document.querySelector(".family");
+const familyButton = document.querySelector(".family button");
 
 // intro event
 window.onload = () => {
@@ -89,3 +91,9 @@ const topButton = document.querySelector(".go-top");
 topButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// footer event
+function familyOpen() {
+  familyArea.classList.toggle("active");
+}
+familyButton.addEventListener("click", familyOpen);

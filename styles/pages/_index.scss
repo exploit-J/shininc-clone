@@ -55,6 +55,9 @@ main {
         &:hover .arrow {
           opacity: 1;
           transform: translateY(30px);
+          @include responsive {
+            transform: translateY(50px);
+          }
         }
         .button {
           position: relative;
@@ -313,12 +316,18 @@ footer {
       }
     }
     .info-right {
-      width: 15%;
+      width: 100%;
+      @include responsive {
+        width: 15%;
+      }
       .family {
         margin-bottom: 10px;
 
-        &:hover ul {
+        &.active ul {
           max-height: 220px;
+        }
+        &.active button i {
+          transform: rotate(-180deg);
         }
         button {
           display: flex;
@@ -327,7 +336,10 @@ footer {
           width: 100%;
           margin-bottom: 4px;
           @include responsive {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+          }
+          i {
+            transition: 0.5s;
           }
         }
         ul {
@@ -346,6 +358,7 @@ footer {
         }
       }
       .sns {
+        display: flex;
         i {
           margin-right: 10px;
           font-size: 1.7rem;

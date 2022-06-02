@@ -349,6 +349,9 @@ main .intro {
       main .intro .intro-copy .button-wrap:hover .arrow {
         opacity: 1;
         transform: translateY(30px); }
+        @media screen and (min-width: 1025px) {
+          main .intro .intro-copy .button-wrap:hover .arrow {
+            transform: translateY(50px); } }
       main .intro .intro-copy .button-wrap .button {
         position: relative;
         width: 36px;
@@ -554,11 +557,16 @@ footer {
       font-size: 1.3rem;
       font-weight: 700; }
   footer .inner-footer .info-right {
-    width: 15%; }
+    width: 100%; }
+    @media screen and (min-width: 1025px) {
+      footer .inner-footer .info-right {
+        width: 15%; } }
     footer .inner-footer .info-right .family {
       margin-bottom: 10px; }
-      footer .inner-footer .info-right .family:hover ul {
+      footer .inner-footer .info-right .family.active ul {
         max-height: 220px; }
+      footer .inner-footer .info-right .family.active button i {
+        transform: rotate(-180deg); }
       footer .inner-footer .info-right .family button {
         display: flex;
         justify-content: space-between;
@@ -567,7 +575,9 @@ footer {
         margin-bottom: 4px; }
         @media screen and (min-width: 1025px) {
           footer .inner-footer .info-right .family button {
-            font-size: 1.5rem; } }
+            font-size: 1.2rem; } }
+        footer .inner-footer .info-right .family button i {
+          transition: 0.5s; }
       footer .inner-footer .info-right .family ul {
         max-height: 0;
         overflow: hidden;
@@ -578,11 +588,13 @@ footer {
           cursor: pointer; }
           footer .inner-footer .info-right .family ul li:hover {
             opacity: 0.5; }
-    footer .inner-footer .info-right .sns i {
-      margin-right: 10px;
-      font-size: 1.7rem; }
-      footer .inner-footer .info-right .sns i:hover {
-        opacity: 0.5; }
+    footer .inner-footer .info-right .sns {
+      display: flex; }
+      footer .inner-footer .info-right .sns i {
+        margin-right: 10px;
+        font-size: 1.7rem; }
+        footer .inner-footer .info-right .sns i:hover {
+          opacity: 0.5; }
 
 @keyframes plus-rotate {
   50% {
