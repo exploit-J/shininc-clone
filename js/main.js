@@ -40,12 +40,16 @@ function aboutEvent() {
     const itemH = item.getBoundingClientRect().top;
     if (windowH > itemH + 80) {
       item.classList.add("active");
+    } else {
+      item.classList.remove("active");
     }
   });
   sectionTitle.forEach((item) => {
     const titleLoc = item.getBoundingClientRect().top;
     if (windowH > titleLoc + 80) {
       item.classList.add("active");
+    } else {
+      item.classList.remove("active");
     }
   });
 }
@@ -59,6 +63,8 @@ function businessEvent() {
     const itemH = item.getBoundingClientRect().top;
     if (windowH > itemH + 80) {
       item.classList.add("active");
+    } else {
+      item.classList.remove("active");
     }
   });
 }
@@ -73,16 +79,22 @@ function newsEvent() {
     const itemH = item.getBoundingClientRect().top;
     if (windowH > itemH + 80) {
       item.classList.add("active");
+    } else {
+      item.classList.remove("active");
     }
   });
   moreComent.forEach((item) => {
     const itemH = item.getBoundingClientRect().top;
     if (windowH > itemH + 80) {
       item.classList.add("active");
+    } else {
+      item.classList.remove("active");
     }
   });
   if (windowH > contact.getBoundingClientRect().top + 80) {
     contact.classList.add("active");
+  } else {
+    contact.classList.remove("active");
   }
 }
 window.addEventListener("scroll", newsEvent);
