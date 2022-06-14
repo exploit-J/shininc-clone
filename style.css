@@ -299,6 +299,8 @@ header {
     header .input-area i {
       font-size: 1.2rem;
       cursor: pointer; }
+      header .input-area i:first-child {
+        margin-right: 8px; }
 
 main .intro {
   position: relative;
@@ -409,9 +411,11 @@ main section {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2.5rem;
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-100px);
     transition: 0.5s; }
     main section h2.active {
+      opacity: 1;
       transform: translateX(0); }
   main section .dot {
     color: #d70c19; }
@@ -501,6 +505,8 @@ main .more {
   main .more.active {
     opacity: 1;
     transform: translateY(0); }
+  main .more:hover {
+    opacity: 0.5; }
 
 footer {
   position: relative;

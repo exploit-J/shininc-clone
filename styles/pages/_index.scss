@@ -126,9 +126,11 @@ main {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 2.5rem;
-      transform: translateX(-100%);
+      opacity: 0;
+      transform: translateX(-100px);
       transition: 0.5s;
       &.active {
+        opacity: 1;
         transform: translateX(0);
       }
     }
@@ -243,6 +245,9 @@ main {
     &.active {
       opacity: 1;
       transform: translateY(0);
+    }
+    &:hover {
+      opacity: 0.5;
     }
   }
 }

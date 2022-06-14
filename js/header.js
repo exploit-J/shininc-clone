@@ -82,8 +82,12 @@ window.addEventListener("wheel", (e) => {
 // search-icon toggle
 const searchIcon = document.querySelector("header .search-icon");
 const searchModal = document.querySelector(".input-area");
+const searchCloseBtn = document.querySelector("header .search .close-button");
 
 function searchModalToggle() {
   searchModal.classList.toggle("active");
 }
 searchIcon.addEventListener("click", searchModalToggle);
+searchCloseBtn.addEventListener("click", () => {
+  searchModal.classList.remove("active");
+});
